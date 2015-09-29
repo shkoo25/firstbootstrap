@@ -2358,6 +2358,17 @@ if (typeof jQuery === 'undefined') {
 
       Plugin.call($spy, data)
     })
+
+  $("monday-button").on("click",function(){
+    console.log("here")
+    alert("hello")
+    //$(".text").val();
+
+
+
+
+
+})
   })
 
 }(jQuery);
