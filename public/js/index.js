@@ -6,6 +6,17 @@ $(document).on("ready", function(){
 		mondayRef.push(words)
 		$(".text").val('');
 
+		mondayRef.on('value',function(snapshot) {
+			console.log(snapshot.val());
+			for(var task in snapshot.val()){
+				console.log(snapshot.val())
+				var mondayContainer= $("<div>"+ task + "</div>")
+				$(".monday-container").append(mondayContainer);
+			}
+
+		})
+		
+
 	})
 	var tuesdayRef = new Firebase("https://incandescent-heat-3402.firebaseio.com/tuesday");
 	
