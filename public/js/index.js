@@ -5,14 +5,17 @@ $(document).on("ready", function(){
 		var words = $(".text").val();
 		mondayRef.push(words)
 		$(".text").val('');
+		
 
 		mondayRef.on('value',function(snapshot) {
-			console.log(snapshot.val());
-			for(var task in snapshot.val()){
-				console.log(snapshot.val())
-				var mondayContainer= $("<div>"+ task + "</div>")
+			console.log(words);
+			//Empty out div here.
+			//for(var task in snapshot.val()){
+				//console.log(snapshot.val())
+				var mondayContainer= $("<div>"+ words + "</div>")
 				$(".monday-container").append(mondayContainer);
-			}
+			//}
+			
 
 		})
 		
