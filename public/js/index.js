@@ -24,9 +24,15 @@ $(document).on("ready", function(){
 	var tuesdayRef = new Firebase("https://incandescent-heat-3402.firebaseio.com/tuesday");
 	
 	$(".tuesday-button").on("click",function(){
-		var words = $(".text").val();
-		tuesdayRef.push(words)
+		var words2 = $(".text").val();
+		tuesdayRef.push(words2)
 		$(".text").val('');
+
+		tuesdayRef.on('value',function(snapshot){
+			console.log(words2);
+			var tuesdayContainer = $("<div>"+ words2 + "</div>")
+			$(".tuesday-container").append(tuesdayContainer)
+		})
 	})
 
 	var wednesdayRef = new Firebase("https://incandescent-heat-3402.firebaseio.com/wednesday");
