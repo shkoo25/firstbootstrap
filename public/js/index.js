@@ -38,9 +38,16 @@ $(document).on("ready", function(){
 	var wednesdayRef = new Firebase("https://incandescent-heat-3402.firebaseio.com/wednesday");
 
 	$(".wednesday-button").on("click",function(){
-		var words= $(".text").val();
-		wednesdayRef.push(words)
+		var words3= $(".text").val();
+		wednesdayRef.push(words3)
 		$(".text").val('');
+
+		wednesdayRef.on('value',function(snapshot){
+			console.log(words3);
+			var wednesdayContainer = $("<div>"+ words3 + "</div>")
+			$(".wednesday-container").append(wednesdayContainer)
+
+		})
 	})
 
 	var thursdayRef= new Firebase("https://incandescent-heat-3402.firebaseio.com/thursday");
